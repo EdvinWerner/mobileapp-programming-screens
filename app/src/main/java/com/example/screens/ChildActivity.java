@@ -12,5 +12,17 @@ public class ChildActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_child);
 
+        name = findViewById(R.id.set_name);
+        number = findViewById(R.id.set_number);
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            String name = extras.getString("name");
+            int number = extras.getInt("number");
+        }
+        name.setText(extras.getString("name"));
+        number.setText(String.valueOf(extras.getInt("number")));
+
+
     }
 }
